@@ -89,11 +89,24 @@ class HumanModel(nn.Module):
         return feat, rgb
 
     def world2smpl(self, xyz, param):
-        xyz = torch.matmul(xyz - param['Th'], param['Rh'])
+        # if easymocap
+        xyz = torch.matmul(xyz - param['Th'], param['Rh']) 
+
+        # if THuman
+        # xyz[..., 1] += param['y_transl'] 
+        # xyz[..., :3] = xyz[..., :3] / param['height'] * param['v_scale']
+        # xyz = (xyz - param['transl']) / param['scale']
+
         return xyz
 
     def smpl2world(self, xyz, param):
+        # if easymocap
         xyz = torch.matmul(xyz, param['Rh'].transpose(1, 2)) + param['Th']
+
+        # THuman
+        # xyz = xyz * param['scale'] + param['transl']
+        # xyz[..., :3] = xyz[..., :3] / param['v_scale'] * param['human_height']
+        # xyz[..., 1] -= param['y_transl']
         return xyz
 
     def normalize_depth(self, depth, near, far):
