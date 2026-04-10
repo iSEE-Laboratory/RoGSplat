@@ -15,7 +15,7 @@ sh ./install.sh
 Please follow [sherf](https://github.com/skhu101/SHERF) to download the RenderPeople dataset. Unzip and rename it into ```renderpeople```, split dataset into ```train``` and ```val```.
 
 #### Preprocessed SMPL
-Download our estimated and preprocessed data from [here](https://1drv.ms/u/c/977dca105dd7d644/EduU7vMguu5EskJzEFFnPrMBFu-bRoy0933JQE0ra3OmXQ?e=zjggTs) and put it under ```renderpeople``` folder.
+Download our estimated and preprocessed data from [here](https://1drv.ms/u/c/977dca105dd7d644/EduU7vMguu5EskJzEFFnPrMBFu-bRoy0933JQE0ra3OmXQ?e=zjggTs) or [here](https://www.modelscope.cn/datasets/junjxiao/renderpeople_smpl) and put it under ```renderpeople``` folder.
 
 The final "renderpeople" folder should be like this:
 ```
